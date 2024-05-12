@@ -232,6 +232,7 @@ void display_all_prefix(Node* root, const char* prefix){
 		idx = prefix[i] - 'a';
 		if(node->children[idx] == NULL){
 			printf("There is no prefix %s in the dictionary.\n", prefix);
+			return;
 		}
 		// Update node yang menjadi referensi untuk 
 		// Pencarian kata-kata dengan prefix
@@ -307,6 +308,8 @@ void display_all_words_menu(Node* root){
 		int count = 0; // Untuk menjaga urutan kata pada trie
 		display_all_words(root, words, 0, &count);
 	}
+	printf("Press enter to continue...\n");
+	getchar();
 }
 
 /*
@@ -319,6 +322,8 @@ void display_all_prefix_menu(Node* root){
 	getchar();
 	printf("\n");
 	display_all_prefix(root, inp);
+	printf("Press enter to continue...\n");
+	getchar();
 }
 
 /*
